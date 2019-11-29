@@ -1,0 +1,8 @@
+mysql> create table books(
+    -> id INT primary key,
+    -> name VARCHAR(100),
+    -> author VARCHAR(100),
+    -> subject VARCHAR(100),
+    -> price FLOAT,
+    -> isbn VARCHAR(10));
+
