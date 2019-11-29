@@ -16,7 +16,7 @@ mysql> create table users(
 
 
 mysql> create table copies(
-    -> id INT,
+    -> id INT primary key,
     -> bookid INT,
     -> rack INT,
     -> status VARCHAR(20),
