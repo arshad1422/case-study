@@ -23,3 +23,7 @@ mysql> create table copies(
     -> FOREIGN KEY (bookid) references books(id)
     -> ON UPDATE CASCADE
     -> ON DELETE CASCADE);
+
+mysql> create table issuerecord( id INT primary key NOT NULL, copyid INT, memberid INT, issue_date INT, return_duedate INT, return_date INT, fine_amount FLOAT, FOREIGN KEY (copyid) REFERENCES copies(id) ON UPDATE CASCADE ON DELETE CASCADE, FOREIGN KEY (memberid) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE );
+
+mysql> create table payments( id INT primary key NOT NULL, userid INT NOT NULL, amount FLOAT, type VARCHAR(50), transaction_time TIME, nextpayment_duedate DATE, FOREIGN KEY (userid) REFERENCES users (id) ON DELETE CASCADE ON UPDATE CASCADE);
