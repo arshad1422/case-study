@@ -6,3 +6,20 @@ mysql> create table books(
     -> price FLOAT,
     -> isbn VARCHAR(10));
 
+mysql> create table users(
+    -> id INT primary key,
+    -> name VARCHAR(100),
+    -> email VARCHAR(100),
+    -> phone VARCHAR(100),
+    -> password VARCHAR(20),
+    -> role VARCHAR(50));
+
+
+mysql> create table copies(
+    -> id INT,
+    -> bookid INT,
+    -> rack INT,
+    -> status VARCHAR(20),
+    -> FOREIGN KEY (bookid) references books(id)
+    -> ON UPDATE CASCADE
+    -> ON DELETE CASCADE);
